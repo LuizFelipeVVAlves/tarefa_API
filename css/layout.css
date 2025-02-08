@@ -1,0 +1,114 @@
+body{
+    font-family: Darker Grotesque;
+}
+
+header{
+    background-color: #85CDF5;
+    color: #333333;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+footer{
+    background-color: #333333;
+    position: relative;
+    color: #FFFFFF;
+    height: 275px;
+}
+
+h1{
+    font-size: 96px;
+}
+
+h3 {
+    font-size: 48px;
+    color: #DEB959
+}
+
+.header-link{
+    font-size: 30px;
+    font-weight: 700;
+    color: #333333;
+    text-decoration: none;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contact-info{
+    width: 378px;
+    height: 102px;
+    position: absolute;
+    top: 56px;
+    left: 509px;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.info img {
+    width: 15px;
+    height: 15px;
+}
+
+.credits{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    gap: 5px;
+    color: #FFFFFF;
+    font-size: 18px;
+    top: 56px;
+    left: 1036px;
+}
+
+.credits p{
+    width: 119px;
+    height: 24px;
+    margin: 0;
+}
+
+.credits img{
+    width: 104px;
+    height: 104px;
+}
+
+#wolf-icon{
+    width: 95.5462417602539;
+    height: 110.72433471679688;
+    top: 12.64px;
+    left: 652.45px;
+}
+
+#accent-link{
+    background-color: #DEB959;
+    font-size: 25px;
+    font-weight: 700;
+    color: #333333;
+    border-style: none;
+    text-decoration: none;
+    position: absolute;
+    width: 144;
+    height: 30;
+    top: 194px;
+    left: 509px;
+}
+
+#map{
+    width: 250;
+    height: 168;
+    position: absolute;
+    top: 56px;
+    left: 219px;
+}
+
