@@ -8,7 +8,14 @@ header{
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
+}
+
+header img {
+    width: 96px;
+    height: 112px;
+    position: absolute;
+    top: 12px;
 }
 
 footer{
@@ -84,8 +91,8 @@ h3 {
 }
 
 #wolf-icon{
-    width: 95.5462417602539;
-    height: 110.72433471679688;
+    width: 95px;
+    height: 110px;
     top: 12.64px;
     left: 652.45px;
 }
@@ -111,4 +118,3 @@ h3 {
     top: 56px;
     left: 219px;
 }
-
