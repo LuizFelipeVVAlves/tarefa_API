@@ -56,7 +56,7 @@ function criar_card_nao_adotados(imagem,nome,desc,idade,adotado,x){
             wolf_name.innerText = nome
             wolf_img.setAttribute("src",imagem)
             adopt_button.setAttribute("href",link)
-            adopt_button.innerText = "Adotar"
+            adopt_button.innerHTML = "Adotar"
 
             //adopt_button.addEventListener("click",() =>{show_lobo(x)})
             

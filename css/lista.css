@@ -1,6 +1,9 @@
 .filter_div{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    margin-left: 5rem;
+    margin-top: 2rem;
 }
 
 #btn_show {
@@ -112,6 +115,17 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+
+}
+
+#button1, #button2 {
+    background-color: orange;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
 }
 
 /*** valores ***/
@@ -178,4 +192,18 @@
 
     width: 15vw;
 
+}
+
+.add-lobo {
+    background-color: orange;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+body {
+    font-family: Arial, sans-serif;
 }
