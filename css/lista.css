@@ -1,0 +1,181 @@
+.filter_div{
+    display: flex;
+    justify-content: space-around;
+}
+
+#btn_show {
+
+    background-color: #85CDF5;
+    border: 2px black solid;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    
+
+
+}
+
+
+
+/*** wolfs exemplo ***/
+
+.main_wolfs {
+
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.wolf_title {
+
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: #DEB959;
+
+}
+
+.wolf_title h1 {
+
+    padding-top: 5vh;
+
+}
+
+.wolf_container {
+
+    padding-top: 10vh;
+    width: 100%;
+    display: flex;
+
+
+}
+
+#wolf_img1 img{
+
+    box-shadow: -50px -20px #2C5680;
+    margin-left: 5rem;
+
+}
+
+#wolf_img2 img{
+
+    box-shadow: 50px -20px #2C5680;
+    margin-right: 5rem;
+    width: 25rem;
+    height: 20rem;
+}
+
+.wolf_img img{
+
+    width: 25rem;
+    height: 20rem;
+    
+}
+
+.wolf_stats {
+
+    width: 100%;
+
+}
+
+#name {
+
+    font-size: 2rem;
+    display: inline-block;
+
+}
+
+#age {
+
+    margin-top: 1rem;
+    font-size: 1rem;
+
+}
+#age2{
+    margin-top: 1rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#description {
+
+    margin-top: 3rem;
+    font-size: 1.3rem;
+
+}
+
+
+.adopt_button_div{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+/*** valores ***/
+
+.valores_container {
+
+    background-color: grey;
+
+}
+
+.valores_container h1 {
+
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 2rem;
+    color: #DEB959;
+
+    
+
+}
+
+.icon {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15vh 0.2vw;
+
+}
+
+.icon img {
+    border: 20px solid white;
+    background-color: white;
+    border-radius: 60px;
+    width: 6rem;
+
+}
+
+.icons_container {
+
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    color: white;
+
+}
+
+.icons_container p {
+
+    font-size: 1rem;
+    margin-top: 1rem;
+
+}
+
+.icons_container .name {
+
+    font-size: 1.5rem;
+
+}
+
+.icons_container .desc {
+
+    width: 15vw;
+
+}
