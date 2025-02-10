@@ -6,6 +6,7 @@ async function inicializarLocalStorage() {
         }
         const lobos = await response.json();
         localStorage.setItem('lobos', JSON.stringify(lobos));
+        localStorage.setItem('id', 1001);
         console.log('Lobos inicializados no localStorage');
     } catch (error) {
         console.error('Erro ao inicializar o localStorage:', error);
@@ -21,3 +22,5 @@ if (!localStorage.getItem('lobos')) {
         console.error('Erro durante a inicialização do localStorage:', error);
     });
 }
+
+

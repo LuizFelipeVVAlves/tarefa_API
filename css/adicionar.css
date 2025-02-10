@@ -53,6 +53,7 @@ input:focus, textarea:focus{
     padding-top: 2rem;
     display: flex;
     gap: 18px;
+    justify-content: center;
 }
 
 .form__campo{
