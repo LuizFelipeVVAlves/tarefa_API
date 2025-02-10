@@ -34,22 +34,21 @@ section img{
 
 form {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    padding-top: 2rem;
+    padding-top: 1rem;
+    align-items: center;
 }
 
 label{
     font-size: 30px;
-    font-weight: 400;
-    margin-bottom: 5px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
 input{
     border: none;
     border-bottom: 1px solid #000;
     width: 100%;
-    max-width: 400px;
 }
 
 input:focus{
@@ -57,13 +56,30 @@ input:focus{
     border-bottom: 3px solid #000;
 }
 
-.form__linha {
+.form__linha{
+    padding-top: 2rem;
     display: flex;
-    width: 100%;
-    margin-bottom: 1rem;
+    gap: 20px;
 }
 
+.form__campo{
+    display: flex;
+    flex-direction: column;
+}
 
-.input__curto {
-    width: 72px;
+button{
+    background-color: #2d5173; 
+    color: white;
+    border: none; 
+    width: 210px; 
+    height: 60px; 
+    font-size: 36px; 
+    font-weight: 500;
+    cursor: pointer; 
+    display: flex; 
+    justify-content: center; 
+}
+
+.botao:hover {
+    background-color: #1f3a52;
 }
