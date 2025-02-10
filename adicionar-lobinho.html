@@ -23,33 +23,33 @@
     <main>
         <section>
             <h1>Coloque um Lobinho para adoção</h1>
-            <form action="">
+            <div>
                 <div class="form__linha">
                     <div class="form__campo">
                         <label for="name">Nome do Lobinho:</label>
-                        <input type="text" style="width: 564px;">
+                        <input type="text" style="width: 565px;" id="name">
                     </div>
                     <div class="form__campo">
                         <label for="idade">Anos:</label>
-                        <input type="number" min="0" style="width: 177px;">
+                        <input type="number" min="0" style="width: 177px;" id="age">
                     </div>
                 </div>
                 <div class="form__linha">
                     <div class="form__campo">
                         <label for="link">Link da Foto:</label>
-                        <input type="url" style="width: 760px;">
+                        <input type="url" style="width: 760px;" id="link">
                     </div>
                 </div>
                 <div class="form__linha">
                     <div class="form__campo">
                         <label for="">Descrição:</label>
-                        <textarea name="" id="" style="resize: none;" rows="15" cols="150"></textarea>
+                        <input name="" id="description" style="width: 760px; height: 250px;"></input>
                     </div>
                 </div>
                 <div class="form__linha">
                     <button>Salvar</button>
                 </div>
-            </form>
+            </div>
         </section>
 
     </main>
@@ -86,6 +86,7 @@
             </div>
         </div>
     </footer>
-    
+    <script src="script/modules/script.js"></script>
+    <script src="script/adicionar.js"></script>
 </body>
 </html>
