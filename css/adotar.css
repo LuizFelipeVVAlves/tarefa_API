@@ -80,6 +80,6 @@ button{
     justify-content: center; 
 }
 
-.botao:hover {
+button:hover {
     background-color: #1f3a52;
 }
