@@ -5,36 +5,6 @@
     text-decoration: none;
 }
 
-.container { 
-    display: flex;
-    align-items: center;    
-    justify-content: space-between;
-    padding: 0 7rem;
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
-header{
-    background-color: #85CDF5;
-    color: #333333;
-    height: 8.125rem;
-    padding: 0.5rem 0 0.5rem 0;
-}
-
-header img {
-    width: 96px;
-    height: 112px;
-}
-
-footer{
-    display: flex;
-    justify-content: space-around;
-    background-color: #333333;
-    position: relative;
-    color: #FFFFFF;
-    height: 275px;
-}
-
 h1{
     font-size: 96px;
 }
@@ -42,6 +12,27 @@ h1{
 h3 {
     font-size: 48px;
     color: #DEB959
+}
+
+.container { 
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    padding: 0 7rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    gap: 12rem;
+}
+
+header{
+    background-color: #85CDF5;
+    color: #333333;
+    height: 8.125rem;
+}
+
+header img {
+    width: 96px;
+    height: 112px;
 }
 
 .header-link{
@@ -53,15 +44,14 @@ h3 {
     margin-bottom: 50px;
 }
 
-.contact-info{
-    width: 378px;
-    height: 102px;
-    position: absolute;
-    top: 56px;
-    left: 509px;
+footer{
+    background-color: #333333;
+    color: #FFFFFF;
+    height: 275px;
+    align-content: center;
 }
 
-.info{
+.footer__contact__info__infos{
     display: flex;
     align-items: center;
     gap: 10px; 
@@ -70,61 +60,48 @@ h3 {
     font-size: 18px;
 }
 
-.info img {
+.footer__contact__map{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer__contact__info__infos img {
     width: 15px;
     height: 15px;
 }
 
-.credits{
+#footer__contact__info__accent__link{
+    margin-top: 25px;
+    background-color: #DEB959;
+    font-size: 25px;
+    font-weight: 700;
+    color: #333333;
+    border-style: none;
+    width: 144px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__credits{
     display: flex;
     flex-direction: column;
-    position: absolute;
     text-align: center;
     width: 150px;
     height: 150px;
     gap: 5px;
     color: #FFFFFF;
     font-size: 18px;
-    top: 56px;
-    left: 1036px;
 }
 
-.credits p{
+.footer__credits p{
     width: 119px;
     height: 24px;
-    margin: 0;
 }
 
-.credits img{
+.footer__credits img{
     width: 104px;
     height: 104px;
-}
-
-#wolf-icon{
-    width: 95px;
-    height: 110px;
-    top: 12.64px;
-    left: 652.45px;
-}
-
-#accent-link{
-    background-color: #DEB959;
-    font-size: 25px;
-    font-weight: 700;
-    color: #333333;
-    border-style: none;
-    text-decoration: none;
-    position: absolute;
-    width: 144;
-    height: 30;
-    top: 194px;
-    left: 509px;
-}
-
-#map{
-    width: 250;
-    height: 168;
-    position: absolute;
-    top: 56px;
-    left: 219px;
 }
