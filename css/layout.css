@@ -14,7 +14,7 @@ h3 {
     color: #DEB959
 }
 
-.container { 
+.container__header__footer { 
     display: flex;
     align-items: center;    
     justify-content: center;
