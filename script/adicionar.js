@@ -20,10 +20,10 @@ function lobinhoAdd(name, age, photo, description) {
             idade: age,
             descricao: description,
             imagem: photo,
-            adotado:false,
-            nomeDono:null,
-            idadeDono:null,
-            emailDono:null,
+            adotado: false,
+            nomeDono: null,
+            idadeDono: null,
+            emailDono: null,
         }
         console.log(lista)
         lista.push(lobinho);
