@@ -6,19 +6,75 @@
     <title>nomeDoLobo</title>
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/show.css">
+    <style>
+        .lobinho-container {
+            display: flex;
+            align-items: center;
+            
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .lobinho-container img {
+            width: 300px;
+            height: auto;
+            margin-right: 20px;
+            
+        }
+        .lobinho-container .descricao {
+            font-size: 1.2em;
+            
+        }
+        .lobinho-h1{
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+            
+        }
+
+        .adota-lobo{
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            
+        }
+
+        .exclue-lobo{
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            
+        }
+    </style>
 </head>
 <body>
     <header>
-            <div class="container__header__footer">
-                <a class="header-link" href="lista-lobinhos.html" alt="Link para a página que lista os lobinhos">Nossos Lobinhos</a>
-                <a href="home.html"><img src="img/wolf-icon.png"></a>
-                <a class="header-link" href="quem-somos.html" alt="Link para a página 'Quem Somos'">Quem Somos</a>
-            </div>
+        <div class="container__header__footer">
+            <a class="header-link" href="lista-lobinhos.html" alt="Link para a página que lista os lobinhos">Nossos Lobinhos</a>
+            <a href="home.html"><img src="img/wolf-icon.png"></a>
+            <a class="header-link" href="quem-somos.html" alt="Link para a página 'Quem Somos'">Quem Somos</a>
+        </div>
     </header>
 
     <main>
-        
-
+        <div class="main_div">
+            <section id="lobinho-details">
+                <!-- Conteúdo será preenchido pelo script -->
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -53,6 +109,48 @@
             </div>
         </div>
     </footer>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            const url = "script/modules/lobinhos.json";
+            const fetchconfig = {
+                "method": "GET"
+            };
+
+            fetch(url, fetchconfig)
+                .then(response => response.json())
+                .then(data => {
+                    var lobinho = data.find(lobinho => lobinho.id == id);
+                    if (lobinho == undefined) {
+                        document.title = "Lobinho não encontrado";
+                        document.querySelector('#lobinho-details').innerHTML = `
+                            <section>
+                                <h1>Lobinho não encontrado</h1>
+                                <p>Este lobinho não foi encontrado em nossa base de dados.</p>
+                            </section>
+                        `;
+                        return;
+                    }
+                    const { nome, idade, descricao, imagem } = lobinho;
+                    document.title = nome;
+                    document.querySelector('#lobinho-details').innerHTML = `
+                        <h1 class="lobinho-h1">${nome}</h1>
+                        <div  class="lobinho-container">
+                            <div>
+                                <img src="${imagem}" alt="Foto de ${nome}">
+                                <a href="" class="adota-lobo">Adotar</a>
+                                <a href="" class="exclue-lobo">Excluir</a>
+
+                            </div>
+                            <div class="descricao">
+                                <p>${descricao}</p>
+                            </div>
+                            
+                        </div>
+                    `;
+                });
+        });
+    </script>
 </body>
 </html>

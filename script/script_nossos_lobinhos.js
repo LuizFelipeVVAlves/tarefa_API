@@ -1,5 +1,5 @@
 const url = "script/modules/lobinhos.json"
-const link = "show-lobinho.html"
+
 const inputSearch = document.querySelector(".search")
 var num = 0
 let main_div = document.querySelector(".main_div")
@@ -23,6 +23,7 @@ inputSearch.oninput = () => {
 
 function criar_card_nao_adotados(imagem,nome,desc,idade,adotado,x){
     x += 1
+    var link = `show-lobinho.html?id=${x}`
     if(adotado == false){
         
         if(num % 2 == 0){
@@ -132,6 +133,7 @@ function criar_card_nao_adotados(imagem,nome,desc,idade,adotado,x){
 
 function criar_card_adotados(imagem,nome,desc,idade,adotado,x){
     x += 1
+    var link = `show-lobinho.html?id=${x}`
     if(adotado == true){
         
         if(num % 2 == 0){
@@ -249,7 +251,7 @@ function get_msg_adopted(){
         .then((resposta) =>{
             console.log(resposta)
             resposta.forEach((elemento,indice) => {
-                criar_card_adotados(elemento.imagem,elemento.nome,elemento.descricao,elemento.idade,elemento.adotado,indice)
+                criar_card_adotados(elemento.imagem,elemento.nome,elemento.descricao,elemento.idade,elemento.adotado,elemento.id - 1)
             });
             
         })
@@ -278,7 +280,7 @@ function get_msg_not_adopted(){
             console.log(resposta)
             resposta.forEach((elemento,indice) => {
                 lista.push([elemento.imagem,elemento.nome,elemento.descricao,elemento.idade,elemento.adotado,indice])
-                criar_card_nao_adotados(elemento.imagem,elemento.nome,elemento.descricao,elemento.idade,elemento.adotado,indice)
+                criar_card_nao_adotados(elemento.imagem,elemento.nome,elemento.descricao,elemento.idade,elemento.adotado,elemento.id - 1)
             });
             
         })
