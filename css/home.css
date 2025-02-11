@@ -98,3 +98,19 @@
     width: 195px;
     height: 140px;
 }
+
+.lobinhos {
+    text-align: center;
+}
+
+.lobinhos h1 {
+    font-family: "Darker Grotesque", sans-serif;
+    font-size: 3rem;; 
+    color: #DEB959;
+}
+
+.lobos{
+    width: 998px;
+    height: 789px;
+    gap: 71px;
+}
