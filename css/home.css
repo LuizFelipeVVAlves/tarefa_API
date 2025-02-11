@@ -131,6 +131,7 @@ figure {
 }
 
 #border1{
+    border: 5px solid #333;
     background-color: #2C5680;
     width: 430px;
     height: 330px;
@@ -141,6 +142,7 @@ figure {
 }
 
 #border2{
+    border: 5px solid #333;
     background-color: #2C5680;
     width: 430px;
     height: 330px;
