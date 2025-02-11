@@ -4,6 +4,8 @@ const inputSearch = document.querySelector(".search")
 var num = 0
 let main_div = document.querySelector(".main_div")
 let lista = []
+let currentPage = 1
+const itemsPerPage = 50
 
 inputSearch.oninput = () => {
      main_div.innerHTML = ""
@@ -239,22 +241,55 @@ function criar_card_adotados(imagem,nome,desc,idade,adotado,x){
 
 function get_msg_adopted(){
     const lobinhos = JSON.parse(localStorage.getItem('lobos')) || [];
-    lobinhos.forEach((elemento, indice) => {
+    main_div.innerHTML = ""
+    var start = (currentPage - 1) * itemsPerPage
+    var end = start + itemsPerPage
+    var paginatedItems = lobinhos.slice(start, end)
+    paginatedItems.forEach((elemento, indice) => {
         if (elemento.adotado) {
             criar_card_adotados(elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, elemento.id - 1);
         }
     });
+    renderPaginationButtons()
 }
 
 function get_msg_not_adopted(){
-    const lobinhos = JSON.parse(localStorage.getItem('lobos')) || [];
-    lobinhos.forEach((elemento, indice) => {
+    var lobinhos = JSON.parse(localStorage.getItem('lobos')) || [];
+    main_div.innerHTML = ""
+    var start = (currentPage - 1) * itemsPerPage
+    var end = start + itemsPerPage
+    var paginatedItems = lobinhos.slice(start, end)
+    paginatedItems.forEach((elemento, indice) => {
         lista.push([elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, indice]);
         if (!elemento.adotado) {
             criar_card_nao_adotados(elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, elemento.id - 1);
         }
     });
+    renderPaginationButtons()
 }
+
+
+
+function renderPaginationButtons() {
+    var paginationDiv = document.querySelector(".pagination")
+    paginationDiv.innerHTML = ""
+    var lobinhos = JSON.parse(localStorage.getItem('lobos')) || [];
+    var totalPages = Math.ceil(lobinhos.length / itemsPerPage)
+
+    for (let i = 1; i <= totalPages; i++) {
+        var button = document.createElement("button")
+        button.innerText = i
+        if (i === currentPage) {
+            button.classList.add("active")
+        }
+        button.addEventListener("click", () => {
+            currentPage = i
+            checked()
+        })
+        paginationDiv.appendChild(button)
+    }
+}
+
 
 function checked(){
     console.log("oieeeee")

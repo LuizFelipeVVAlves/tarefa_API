@@ -12,8 +12,8 @@
     border: 2px black solid;
     color: white;
     padding: 15px 32px;
-    text-align: center;
     
+
 
 
 }
@@ -206,4 +206,31 @@
 
 body {
     font-family: Arial, sans-serif;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination button {
+    background-color: #85CDF5;
+    border: 1px solid #2C5680;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.pagination button:hover {
+    background-color: #2C5680;
+}
+
+.pagination button.active {
+    background-color: #2C5680;
+    font-weight: bold;
 }
