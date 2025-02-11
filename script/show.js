@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div>
                         <img src="${imagem}" alt="Foto de ${nome}">
                         <a href="" class="adota-lobo">Adotar</a>
-                        <a href="" class="exclue-lobo">Excluir</a>
+                        <a href="../lista-lobinhos.html" class="exclue-lobo">Excluir</a>
 
                     </div>
                     <div class="descricao">
