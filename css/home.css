@@ -102,15 +102,17 @@
 
 .lobinhos {
     text-align: center;
-    
-    
+    text-align: center;
+    width: fit-content; 
+    margin: 0 auto; 
+
 }
 
 .lobinhos h1 {
     font-family: "Darker Grotesque", sans-serif;
     font-size: 3rem;; 
     color: #DEB959;
-    
+
 }
 
 .lobos {
@@ -122,11 +124,39 @@
     align-items: center; 
 }
 
+.lobos {
+    display: flex;
+    flex-direction: column; 
+    gap: 71px; 
+    align-items: center; 
+}
+
+.dados-lobo1{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    text-align: left; 
+    gap: 20px; 
+}
+
+.dados-lobo2 {
+    display: flex;
+    flex-direction: row-reverse; 
+    align-items: center;
+    text-align: right; 
+    gap: 20px; 
+}
+
+.dados-lobo1 p, .dados-lobo2 p{
+    width: 461px;
+    height: 235px;
+    line-height: 1.3rem;
+}
+
 .img-container {   
     width: 430px;   
     height: 328px;
     box-shadow: -50px -20px #2C5680;
-    
 }
 
 .img-container img {  
@@ -134,3 +164,4 @@
     height: 328px;
     object-fit: cover;
 }
+
