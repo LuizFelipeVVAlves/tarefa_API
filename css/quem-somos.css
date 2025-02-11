@@ -1,0 +1,22 @@
+main {
+    text-align: center;
+    margin: 0;
+}
+
+main h2 {
+    width: 811.59px;
+    font-family: "Roboto";
+    font-size: 3rem;
+    color: #000;
+}
+
+main p {
+    font-size: 1.5rem;
+    letter-spacing: 15.5%;
+    width: 960px;
+    height: 134px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
