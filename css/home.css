@@ -98,6 +98,66 @@ figure {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    gap: 4rem;
+}
+
+.lobos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    margin: 0 auto;
+    gap: 5rem;
+}
+
+.lobos__lobo {
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    gap: 3rem;
+    position: relative;
+}
+
+.img__lobo{
+    min-width: 430px;
+    min-height: 330px;
+    max-width: 430px;
+    max-height: 330px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#border1{
+    background-color: #2C5680;
+    width: 430px;
+    height: 330px;
+    position: absolute;
+    z-index: -1;
+    top: -20px;
+    left: -20px;
+}
+
+#border2{
+    background-color: #2C5680;
+    width: 430px;
+    height: 330px;
+    position: absolute;
+    z-index: -1;
+    top: -20px;
+    right: -50px;
+}
+
+.lobos__lobo h4 {
+    font-size: 36px;
+}
+
+.lobos__lobo h5{
+    font-size: 20px;
+}
+
+.lobos__lobo p{
+    font-size: 24px;
 }
