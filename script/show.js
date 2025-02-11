@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
+    localStorage.setItem('idDoLobo', id);
     const url = "script/modules/lobinhos.json";
     const fetchconfig = {
         "method": "GET"
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div  class="lobinho-container">
                     <div>
                         <img src="${imagem}" alt="Foto de ${nome}">
-                        <a href="" class="adota-lobo">Adotar</a>
+                        <a href="../adotar-lobinho.html" class="adota-lobo">Adotar</a>
                         <a href="../lista-lobinhos.html" class="exclue-lobo">Excluir</a>
 
                     </div>
@@ -39,3 +40,4 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         });
 });
+
