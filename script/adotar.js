@@ -21,6 +21,7 @@ button.addEventListener("click", ()=> {
     let emailOwner = document.getElementById("email").value;
 
     lobinhoAdotar(nameOwner, ageOwner, emailOwner);
+    window.location.href = '../lista-lobinhos.html'
 })
 
 function lobinhoAdotar(nameOwner, ageOwner, emailOwner) {
