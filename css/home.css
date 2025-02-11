@@ -6,6 +6,7 @@
     font-family: 'Darker Grotesque', sans-serif;   
     gap: 10px;  
     padding:  120px 365px; 
+    object-fit: cover;
 }
 
 .slide h1{
@@ -101,16 +102,35 @@
 
 .lobinhos {
     text-align: center;
+    
+    
 }
 
 .lobinhos h1 {
     font-family: "Darker Grotesque", sans-serif;
     font-size: 3rem;; 
     color: #DEB959;
+    
 }
 
-.lobos{
+.lobos {
     width: 998px;
     height: 789px;
-    gap: 71px;
+    display: flex;
+    flex-direction: column; 
+    gap: 71px; 
+    align-items: center; 
+}
+
+.img-container {   
+    width: 430px;   
+    height: 328px;
+    box-shadow: -50px -20px #2C5680;
+    
+}
+
+.img-container img {  
+    width: 430px;   
+    height: 328px;
+    object-fit: cover;
 }
