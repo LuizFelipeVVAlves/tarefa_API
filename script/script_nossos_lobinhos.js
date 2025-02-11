@@ -238,62 +238,23 @@ function criar_card_adotados(imagem,nome,desc,idade,adotado,x){
 
 
 function get_msg_adopted(){
-
-    const fetchconfig = {
-        "method":"GET"
-    }
-
-    fetch(url,fetchconfig)
-
-    .then((resposta) => {
-        resposta.json()
-        
-        .then((resposta) =>{
-            console.log(resposta)
-            resposta.forEach((elemento,indice) => {
-                criar_card_adotados(elemento.imagem,elemento.nome,elemento.descricao,elemento.idade,elemento.adotado,elemento.id - 1)
-            });
-            
-        })
-        .catch((erro) => {
-            console.log(erro)
-        })
-    })
-
-    .catch((erro) =>{
-        console.log(erro)
-    })
+    const lobinhos = JSON.parse(localStorage.getItem('lobos')) || [];
+    lobinhos.forEach((elemento, indice) => {
+        if (elemento.adotado) {
+            criar_card_adotados(elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, elemento.id - 1);
+        }
+    });
 }
 
 function get_msg_not_adopted(){
-
-    const fetchconfig = {
-        "method":"GET"
-    }
-
-    fetch(url,fetchconfig)
-
-    .then((resposta) => {
-        resposta.json()
-        
-        .then((resposta) =>{
-            console.log(resposta)
-            resposta.forEach((elemento,indice) => {
-                lista.push([elemento.imagem,elemento.nome,elemento.descricao,elemento.idade,elemento.adotado,indice])
-                criar_card_nao_adotados(elemento.imagem,elemento.nome,elemento.descricao,elemento.idade,elemento.adotado,elemento.id - 1)
-            });
-            
-        })
-        .catch((erro) => {
-            console.log(erro)
-        })
-    })
-
-    .catch((erro) =>{
-        console.log(erro)
-    })
+    const lobinhos = JSON.parse(localStorage.getItem('lobos')) || [];
+    lobinhos.forEach((elemento, indice) => {
+        lista.push([elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, indice]);
+        if (!elemento.adotado) {
+            criar_card_nao_adotados(elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, elemento.id - 1);
+        }
+    });
 }
-
 
 function checked(){
     console.log("oieeeee")
