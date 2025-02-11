@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get('id');
-    localStorage.setItem('idDoLobo', id);
+    localStorage.setItem('idDoLobo', id); // NÃO EXCLUIR EM HIPOTESE ALGUMA!!!!!!!!!!!!!!!!!!!
 
     var lobinhos = JSON.parse(localStorage.getItem('lobos')) || [];
     var lobinho = lobinhos.find(lobinho => lobinho.id == id);
