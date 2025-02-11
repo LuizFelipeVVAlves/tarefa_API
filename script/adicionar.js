@@ -9,6 +9,7 @@ button.addEventListener("click", ()=> {
     let description = document.getElementById("description").value;
 
     lobinhoAdd(name, age, photo, description);
+    window.location.href = '../adicionar-lobinho.html'
 })
 
 function lobinhoAdd(name, age, photo, description) {
