@@ -1,6 +1,5 @@
-let lista = JSON.parse(localStorage.getItem('lobos'));
 
-let id = localStorage.getItem('idDoLobo');
+
 
 let lobo = lista.find((lobo)=>{
     return lobo.id == id;
@@ -32,7 +31,6 @@ function lobinhoAdotar(nameOwner, ageOwner, emailOwner) {
         lista[index].nomeDono = nameOwner;
         lista[index].idadeDono = ageOwner;
         lista[index].emailDono = emailOwner;
-        localStorage.setItem('lobos', JSON.stringify(lista));
 
     } catch (error) {
         console.error(error);

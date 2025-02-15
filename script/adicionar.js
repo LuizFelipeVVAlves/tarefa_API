@@ -1,4 +1,4 @@
-let lista = JSON.parse(localStorage.getItem('lobos'));
+
 
 let button = document.querySelector('button');
 
@@ -28,8 +28,6 @@ function lobinhoAdd(name, age, photo, description) {
         }
         console.log(lista)
         lista.push(lobinho);
-        localStorage.setItem('lobos', JSON.stringify(lista));
-        localStorage.setItem('id', id+1)
     } catch (error) {
         console.error(error);
     }

@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get('id');
-    localStorage.setItem('idDoLobo', id); // NÃO EXCLUIR EM HIPOTESE ALGUMA!!!!!!!!!!!!!!!!!!!
 
-    var lobinhos = JSON.parse(localStorage.getItem('lobos')) || [];
     var lobinho = lobinhos.find(lobinho => lobinho.id == id);
 
     if (lobinho == undefined) {
@@ -53,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('excluir-lobinho').addEventListener('click', function() {
         var lobinhosAtualizados = lobinhos.filter(l => l.id != lobinho.id);
-        localStorage.setItem('lobos', JSON.stringify(lobinhosAtualizados));
     });
 });
 

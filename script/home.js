@@ -1,4 +1,4 @@
-let lista = JSON.parse(localStorage.getItem('lobos'));
+
 
 let tamanho = lista.length;
 

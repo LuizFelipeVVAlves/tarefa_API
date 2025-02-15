@@ -1,4 +1,4 @@
-const url = "script/modules/lobinhos.json"
+
 
 const inputSearch = document.querySelector(".search")
 var num = 0
@@ -240,7 +240,6 @@ function criar_card_adotados(imagem,nome,desc,idade,adotado,x){
 
 
 function get_msg_adopted(){
-    const lobinhos = JSON.parse(localStorage.getItem('lobos')) || [];
     main_div.innerHTML = ""
     var start = (currentPage - 1) * itemsPerPage
     var end = start + itemsPerPage
@@ -254,7 +253,6 @@ function get_msg_adopted(){
 }
 
 function get_msg_not_adopted(){
-    var lobinhos = JSON.parse(localStorage.getItem('lobos')) || [];
     main_div.innerHTML = ""
     var start = (currentPage - 1) * itemsPerPage
     var end = start + itemsPerPage
@@ -273,7 +271,6 @@ function get_msg_not_adopted(){
 function renderPaginationButtons() {
     var paginationDiv = document.querySelector(".pagination")
     paginationDiv.innerHTML = ""
-    var lobinhos = JSON.parse(localStorage.getItem('lobos')) || [];
     var totalPages = Math.ceil(lobinhos.length / itemsPerPage)
 
     for (let i = 1; i <= totalPages; i++) {
