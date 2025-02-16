@@ -24,7 +24,7 @@ inputSearch.oninput = () => {
 }
 
 function criar_card_nao_adotados(imagem,nome,desc,idade,adotado,x){
-    x += 1
+   
     var link = `show-lobinho.html?id=${x}`
     if(adotado == false){
         
@@ -134,7 +134,7 @@ function criar_card_nao_adotados(imagem,nome,desc,idade,adotado,x){
 }
 
 function criar_card_adotados(imagem,nome,desc,idade,adotado,x){
-    x += 1
+  
     var link = `show-lobinho.html?id=${x}`
     if(adotado == true){
         
@@ -239,36 +239,71 @@ function criar_card_adotados(imagem,nome,desc,idade,adotado,x){
 }
 
 
-function get_msg_adopted(){
+async function get_msg_adopted(){
     main_div.innerHTML = ""
-    var start = (currentPage - 1) * itemsPerPage
-    var end = start + itemsPerPage
-    var paginatedItems = lobinhos.slice(start, end)
-    paginatedItems.forEach((elemento, indice) => {
-        if (elemento.adotado) {
-            criar_card_adotados(elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, elemento.id - 1);
-        }
-    });
-    renderPaginationButtons()
+
+    await fetch("http://localhost:3000/lobos", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        var start = (currentPage - 1) * itemsPerPage
+        var end = start + itemsPerPage
+        var paginatedItems = data.slice(start, end)
+        paginatedItems.forEach((elemento, indice) => {
+            if (elemento.adotado) {
+                criar_card_adotados(elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, elemento.id);
+            }
+        });
+        renderPaginationButtons(data)
+
+
+        
+    })
+    .catch((error) => console.error(error))
+
+
 }
 
-function get_msg_not_adopted(){
+async function get_msg_not_adopted(){
     main_div.innerHTML = ""
-    var start = (currentPage - 1) * itemsPerPage
-    var end = start + itemsPerPage
-    var paginatedItems = lobinhos.slice(start, end)
-    paginatedItems.forEach((elemento, indice) => {
-        lista.push([elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, indice]);
-        if (!elemento.adotado) {
-            criar_card_nao_adotados(elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, elemento.id - 1);
-        }
-    });
-    renderPaginationButtons()
+
+    await fetch("http://localhost:3000/lobos", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        var start = (currentPage - 1) * itemsPerPage
+        var end = start + itemsPerPage
+        var paginatedItems = data.slice(start, end)
+        paginatedItems.forEach((elemento, indice) => {
+            lista.push([elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, indice]);
+            if (!elemento.adotado) {
+                criar_card_nao_adotados(elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, elemento.id);
+            }
+        });
+        renderPaginationButtons(data)
+
+    }
+    
+    
+    
+    )
+    .catch((error) => console.error(error))
+
+    
+    
 }
 
 
 
-function renderPaginationButtons() {
+function renderPaginationButtons(lobinhos) {
     var paginationDiv = document.querySelector(".pagination")
     paginationDiv.innerHTML = ""
     var totalPages = Math.ceil(lobinhos.length / itemsPerPage)
