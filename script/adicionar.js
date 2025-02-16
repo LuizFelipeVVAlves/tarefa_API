@@ -1,5 +1,3 @@
-
-
 let button = document.querySelector('button');
 
 button.addEventListener("click", ()=> {
@@ -12,23 +10,21 @@ button.addEventListener("click", ()=> {
     window.location.href = '../adicionar-lobinho.html'
 })
 
-function lobinhoAdd(name, age, photo, description) {
-    try {
-        let id = parseInt(localStorage.getItem('id'));
-        let lobinho = {
-            id: id,
-            nome: name,
-            idade: age,
-            descricao: description,
-            imagem: photo,
-            adotado: false,
-            nomeDono: null,
-            idadeDono: null,
-            emailDono: null,
-        }
-        console.log(lista)
-        lista.push(lobinho);
-    } catch (error) {
-        console.error(error);
-    }
+async function lobinhoAdd(name, age, description, photo) {
+    const response = await fetch('http://localhost:3000/lobos/', {
+        method: 'POST',
+        header: {
+            'Content-type': 'aplication/json'
+        },
+        body: JSON.stringify ({
+            "nome": `${name}`,
+            "idade": `${age}`,
+            "descricao": `${description}`,
+            "imagem": `${photo}`,
+            "adotado": false,
+            "nomeDono": null,
+            "idadeDono": null,
+            "emailDono": null
+        })
+    })
 }

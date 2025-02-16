@@ -271,31 +271,23 @@ async function get_msg_adopted(){
 async function get_msg_not_adopted(){
     main_div.innerHTML = ""
 
-    await fetch("http://localhost:3000/lobos", {
+    const response = await fetch("http://localhost:3000/lobos", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
         },
     })
-    .then((response) => response.json())
-    .then((data) => {
-        var start = (currentPage - 1) * itemsPerPage
-        var end = start + itemsPerPage
-        var paginatedItems = data.slice(start, end)
-        paginatedItems.forEach((elemento, indice) => {
-            lista.push([elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, indice]);
-            if (!elemento.adotado) {
-                criar_card_nao_adotados(elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, elemento.id);
-            }
-        });
-        renderPaginationButtons(data)
-
-    }
-    
-    
-    
-    )
-    .catch((error) => console.error(error))
+    const data = await response.json()
+    var start = (currentPage - 1) * itemsPerPage
+    var end = start + itemsPerPage
+    var paginatedItems = data.slice(start, end)
+    paginatedItems.forEach((elemento, indice) => {
+        lista.push([elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, indice]);
+        if (!elemento.adotado) {
+            criar_card_nao_adotados(elemento.imagem, elemento.nome, elemento.descricao, elemento.idade, elemento.adotado, elemento.id);
+        }
+    });
+    renderPaginationButtons(data)
 
     
     
