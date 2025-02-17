@@ -57,7 +57,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
     document.getElementById('excluir-lobinho').addEventListener('click', function() {
-        //Inserir lógica de exclusão do lobinho
+        fetch(`http://localhost:3000/lobos/${id}`, {  
+            method: 'DELETE'  
+        }) 
+
     });
 
 });
