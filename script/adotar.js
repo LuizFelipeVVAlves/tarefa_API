@@ -6,8 +6,6 @@ async function lobinhoAdotar(nameOwner, ageOwner, emailOwner, wolfId) {
         "emailDono": emailOwner
     }
 
-    console.log(`"Adotante: ${nameOwner}", ${ageOwner}, ${emailOwner}`);
-
     await fetch(`http://localhost:3000/lobos/${wolfId}`, {
         method: 'PATCH',
         headers: {
@@ -42,14 +40,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     let button = document.getElementById('botao__adotar');
     
-    button.addEventListener("click", ()=> {
+    button.addEventListener("click", async ()=> {
         let nameOwner = document.getElementById("name").value;
         let ageOwner = parseInt(document.getElementById("age").value);
         let emailOwner = document.getElementById("email").value;
-
-        console.log(`nameOwner: ${nameOwner}, ageOwner: ${ageOwner}, emailOwner: ${emailOwner}`);
     
-        lobinhoAdotar(nameOwner, ageOwner, emailOwner, id);
+        await lobinhoAdotar(nameOwner, ageOwner, emailOwner, id);
         window.location.href = '../lista-lobinhos.html'
     })
 })
