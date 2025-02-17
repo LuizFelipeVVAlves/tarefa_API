@@ -1,15 +1,23 @@
-function lobinhoAdotar(nameOwner, ageOwner, emailOwner) {
-    try {
-        let index = lista.indexOf(lobo);
-        console.log(index);
-        lista[index].adotado = true;
-        lista[index].nomeDono = nameOwner;
-        lista[index].idadeDono = ageOwner;
-        lista[index].emailDono = emailOwner;
-
-    } catch (error) {
-        console.error(error);
+async function lobinhoAdotar(nameOwner, ageOwner, emailOwner, wolfId) {
+    const update = {
+        "adotado": true,
+        "nomeDono": nameOwner,
+        "idadeDono": ageOwner,
+        "emailDono": emailOwner
     }
+
+    console.log(`"Adotante: ${nameOwner}", ${ageOwner}, ${emailOwner}`);
+
+    await fetch(`http://localhost:3000/lobos/${wolfId}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(update)
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(e => console.log(e))
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
@@ -38,8 +46,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         let nameOwner = document.getElementById("name").value;
         let ageOwner = parseInt(document.getElementById("age").value);
         let emailOwner = document.getElementById("email").value;
+
+        console.log(`nameOwner: ${nameOwner}, ageOwner: ${ageOwner}, emailOwner: ${emailOwner}`);
     
-        lobinhoAdotar(nameOwner, ageOwner, emailOwner);
+        lobinhoAdotar(nameOwner, ageOwner, emailOwner, id);
         window.location.href = '../lista-lobinhos.html'
     })
 })
